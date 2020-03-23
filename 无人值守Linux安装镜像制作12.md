@@ -8,7 +8,7 @@
 
 - 打开虚拟机的网卡二并修改配置信息
 
-  ![img](./net.PNG)
+
 
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
@@ -101,5 +101,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
   ```
   用PSFTP将封装好的ISO文件传输出来，再进行安装。安装中比较不同。
   安装时正常挂载到光盘上安装。
-
-  
+  ```
+- 本次作业参考链接：
+  https://www.yuque.com/c4pr1c3/linux
+  https://github.com/nekonekoni7/LinuxSysAdmin/blob/master/chap0x01.exp.md
