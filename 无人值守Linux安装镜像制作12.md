@@ -7,7 +7,7 @@
 
 
 - 打开虚拟机的网卡二并修改配置信息
-![img](./net.png 'ok')
+![img](./net.png)
 
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
@@ -16,7 +16,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 修改结果可用`ifconf ig`查看，结果如下图所示：
 
-![img](./2net.png 'ok')
+![img](./2net.png)
 
 ### 定制安装OpenSSH Server
 
@@ -25,11 +25,11 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 - 安装openssh-server以实现通过PuTTY登入的目的
 
-  ![img](./openssh.png 'ok')
+  ![img](./openssh.png)
 
 - 通过PuTTY登入linux
 
-  ![img](./login.png 'ok')
+  ![img](./login.png)
 
 ### 安装镜像
 
