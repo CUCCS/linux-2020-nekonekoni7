@@ -7,7 +7,7 @@
 
 
 - 打开虚拟机的网卡二并修改配置信息
-![image1](./net.png 'ok')
+![img](./net.png 'ok')
 
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
@@ -16,7 +16,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 修改结果可用`ifconf ig`查看，结果如下图所示：
 
-![image2](./2net.png 'ok')
+![img](./2net.png 'ok')
 
 ### 定制安装OpenSSH Server
 
@@ -25,11 +25,11 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 - 安装openssh-server以实现通过PuTTY登入的目的
 
-  ![image3](./openssh.png 'ok')
+  ![img](./openssh.png 'ok')
 
 - 通过PuTTY登入linux
 
-  ![image4](./login.png 'ok')
+  ![img](./login.png 'ok')
 
 ### 安装镜像
 
@@ -39,15 +39,15 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
   `scp path_ubuntu-18.04.4-server-amd64.iso username@ip:`
 
-  ![img08](./ubuntu in linux.png)
+  ![img](./ubuntu in linux.png)
 
 - 由于loopdir具有操作权限，若直接运行`mount -o loop ubuntu-16.04.1-server-amd64.iso loopdir`会报错，所以可在该语句前添加`sudo`以使用root权限进行操作或者修改loopdir的权限`sudo chmod 777 loopdir`
-  ![img08](./loopdir in linux.png)
+  ![img](./loopdir in linux.png)
 - 创建一个工作目录用于克隆光盘内容：`mkdir cd`
 
 - 同步光盘内容到目标工作目录：`rsync -av loopdir/ cd`
 
-  ![img09](./ubuntu in cd.PNG)
+  ![img](./ubuntu in cd.PNG)
 
 - 卸载iso镜像：`umount loopdir` 需加上sudo
 
@@ -61,11 +61,11 @@ sudo vi /etc/netplan/01-netcfg.yaml
     kernel /install/vmlinuz
     append  file=/cdrom/preseed/ubuntu-server-autoinstall.seed debian-installer/locale=en_US console-setup/layoutcode=us keyboard-configuration/layoutcode=us console-setup/ask_detect=false localechooser/translation/warn-light=true localechooser/translation/warn-severe=true initrd=/install/initrd.gz root=/dev/ram rw quiet
   ```
-  ![img09](./cfg.PNG)
+  ![img](./cfg.PNG)
 - 阅读Ubuntu官方提供的示例[preseed.cfg](https://help.ubuntu.com/lts/installation-guide/example-preseed.txt)，根据个人需求定制装机选项，并通过cmd传输至虚拟机：
 
   `scp ubuntu-server-autoinstall.seed username@ip:cd/preseed`
-  ![img09](./PRESEED.PNG)
+  ![img](./PRESEED.PNG)
 
 - 修改isolinux.cfg：`vim isolinux/isolinux.cfg`  -->  add `timeout 10`
 
@@ -89,7 +89,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
               -o $IMAGE $BUILD
   ```
 
-  ![img10](./customISO.PNG)
+  ![img](./customISO.PNG)
 
   注意：此处需要修改custom.iso的权限，并安装genisoimage
 
