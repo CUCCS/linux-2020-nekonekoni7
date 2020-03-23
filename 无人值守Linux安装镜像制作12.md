@@ -7,16 +7,17 @@
 
 
 - 打开虚拟机的网卡二并修改配置信息
-![img](./net.png)
+
+![img](./net.PNG)
 
 ```
 sudo vi /etc/netplan/01-netcfg.yaml
 ```
 
 
-修改结果可用`ifconf ig`查看，结果如下图所示：
+修改结果可用`ifconfig`查看，结果如下图所示：
 
-![img](./2net.png)
+  ![img](./2net.PNG)
 
 ### 定制安装OpenSSH Server
 
@@ -25,11 +26,11 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 - 安装openssh-server以实现通过PuTTY登入的目的
 
-  ![img](./openssh.png)
+  ![img](./openssh.PNG)
 
 - 通过PuTTY登入linux
 
-  ![img](./login.png)
+  ![img](./login.PNG)
 
 ### 安装镜像
 
@@ -39,15 +40,15 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
   `scp path_ubuntu-18.04.4-server-amd64.iso username@ip:`
 
-  ![img](./ubuntu in linux.png)
+  ![img](./ubuntuinlinux.PNG)
 
 - 由于loopdir具有操作权限，若直接运行`mount -o loop ubuntu-16.04.1-server-amd64.iso loopdir`会报错，所以可在该语句前添加`sudo`以使用root权限进行操作或者修改loopdir的权限`sudo chmod 777 loopdir`
-  ![img](./loopdir in linux.png)
+  ![img](./loopdirinlinux.PNG)
 - 创建一个工作目录用于克隆光盘内容：`mkdir cd`
 
 - 同步光盘内容到目标工作目录：`rsync -av loopdir/ cd`
 
-  ![img](./ubuntu in cd.PNG)
+  ![img](./ubuntuincd.PNG)
 
 - 卸载iso镜像：`umount loopdir` 需加上sudo
 
@@ -93,8 +94,13 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
   注意：此处需要修改custom.iso的权限，并安装genisoimage
 
-  ![image11](./precustomISO.PNG)
+  ![img](./precustomISO.PNG)
 - 镜像文件传输运行安装：
+  ![img](./success1.PNG)
+  ![img](./success2.PNG)
 
   ```
   用PSFTP将封装好的ISO文件传输出来，再进行安装。安装中比较不同。
+  安装时正常挂载到光盘上安装。本人ISO安装完后正常显示登录界面（含cucxl）
+
+  
