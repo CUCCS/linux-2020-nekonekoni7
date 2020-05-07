@@ -23,46 +23,46 @@ script:
 
          #任务一:用bash编写一个图片批处理脚本
          #帮助文档
-         - bash tasks/5-1.sh -h  
+         - bash 4-1.sh -h  
           
          #对jpeg格式图片进行图片质量压缩
-         - bash tasks/5-1.sh -q 80 ./img
+         - bash 4-1.sh -q 80 ./img
           
          #对jpeg/png/svg格式图片在保持原始宽高比的前提下压缩分辨率
-         - bash tasks/5-1.sh -r 50 ./img
+         - bash 4-1.sh -r 50 ./img
           
          #批量添加自定义文本水印
-         - bash tasks/5-1.sh -w a_watermark ./img
+         - bash 4-1.sh -w a_watermark ./img
           
          #前缀
-         - bash tasks/5-1.sh -p a_head ./img
+         - bash 4-1.sh -p a_head ./img
           
          #后缀
-         - bash tasks/5-1.sh -s a_tail ./img
+         - bash 4-1.sh -s a_tail ./img
        
          #将png/svg图片统一转换为jpg格式图片
-         - bash tasks/5-1.sh -c ./img
+         - bash 4-1.sh -c ./img
           
          #任务二：用bash编写一个文本批处理脚本
          #worldcup
-         - bash tasks/5-2.sh -h
-         - bash tasks/5-2.sh -a
-         - bash tasks/5-2.sh -b
-         - bash tasks/5-2.sh -c
-         - bash tasks/5-2.sh -d
+         - bash 4-2.sh -h
+         - bash 4-2.sh -a
+         - bash 4-2.sh -b
+         - bash 4-2.sh -c
+         - bash 4-2.sh -d
           
          #web_log
-         - bash tasks/5-3.sh -h
-         - bash tasks/5-3.sh -a
-         - bash tasks/5-3.sh -b
-         - bash tasks/5-3.sh -c
-         - bash tasks/5-3.sh -d
-         - bash tasks/5-3.sh -e
-         - bash tasks/5-3.sh -u /images/USA-logosmall.gif
+         - bash 4-3.sh -h
+         - bash 4-3.sh -a
+         - bash 4-3.sh -b
+         - bash 4-3.sh -c
+         - bash 4-3.sh -d
+         - bash 4-3.sh -e
+         - bash 4-3.sh -u /images/USA-logosmall.gif
 after_script:
-        - /usr/bin/shellcheck tasks/5-1.sh
-        - /usr/bin/shellcheck tasks/5-2.sh
-        - /usr/bin/shellcheck tasks/5-3.sh
+        - /usr/bin/shellcheck 4-1.sh
+        - /usr/bin/shellcheck 4-2.sh
+        - /usr/bin/shellcheck 4-3.sh
 
 after_failure:
         - id
