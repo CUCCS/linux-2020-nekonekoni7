@@ -58,7 +58,8 @@ script:
          - bash 4-3.sh -c
          - bash 4-3.sh -d
          - bash 4-3.sh -e
-         - bash 4-3.sh -u /images/USA-logosmall.gif
+         - bash 4-3.sh -u /images/MOSAIC-logosmall.gif.gif
+         #输出目标URL为访问排行第三的URL
 after_script:
         - /usr/bin/shellcheck 4-1.sh
         - /usr/bin/shellcheck 4-2.sh
